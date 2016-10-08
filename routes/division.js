@@ -1,13 +1,15 @@
 var express = require('express');
 var router =express.Router();
-
+var x = 0;
+var y = 0;
+var result =0;
 
 router.post('/', function(req, res){ //router.post('/:name', function(req, res) { //name is a variable that accepts any info passed after '/'
  console.log(req.body);
-var x = parseInt(req.body.x);
-var y = parseInt(req.body.y);
+x = parseFloat(req.body.x);
+y = parseFloat(req.body.y);
 var type = req.body.type;
-var result = 0;
+result = 0;
 
 switch (type) {
   case "addition":
@@ -29,7 +31,6 @@ switch (type) {
 
    res.send(result.toString());
 });
-
 
 
 

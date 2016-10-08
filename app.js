@@ -15,6 +15,8 @@ app.use('/addition', additionRouter);
 app.use('/division', divisionRouter);
 app.use('/multiplication', multiplicationRouter);
 app.use('/subtraction', subtractionRouter);
+app.use('/clear', additionRouter);
+
 
 app.get('/', function(req, res){
   console.log('Received a request at', new Date());

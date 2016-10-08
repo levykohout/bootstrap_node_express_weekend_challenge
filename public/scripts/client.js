@@ -1,6 +1,7 @@
 $(function(){
 var x=0;
 var y=0;
+var type='';
 
 
 $('.numbers').on('click', getNumber);
@@ -21,7 +22,23 @@ console.log(data);
 
 
            }); //End of post ajax
+
+
       }); //End of click function
+
+      $('#clear').on('click', function(){
+        clearNumbers();
+        console.log(data);
+             $.ajax({
+                  type: 'POST',
+                  url: '/clear',
+                  success: function(result){
+                 $('#result').text(result);
+               }
+
+
+             }); //End of post ajax
+      }); //end of click function
 
       function getNumber(){
           if (data.type == 'addition' || data.type == 'division' ||data.type == 'multiplication' ||data.type == 'subtraction'){
@@ -38,7 +55,16 @@ console.log(data);
       }
 
       function getOperator(){
-      var type = $(this).attr('id');
+      type = $(this).attr('id');
       data.type=type;
     }
+
+      function clearNumbers(){
+        x=0;
+        y=0;
+        type=''; //clearing type resulting to switch statement on server to default
+            data.x=x;
+              data.y=y;
+              data.type=type;
+      }
 });
