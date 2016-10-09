@@ -27,29 +27,10 @@ switch (type) {
 
   }
   console.log(result);
-                               //members[req.params.name]++;
+
 
    res.send(result.toString());
 });
-
-// router.get('/', function(req, res){
-//   var x = 0;
-//   var y = 0;
-//   var result =0;
-//   console.log(result);
-// res.send(result.toString());
-//  });
-
-
-//   router.get('/', function(req, res){
-//   res.send(members);
-//   console.log(members);
-// });
-
-
-
-
-
 
 
 module.exports = router;

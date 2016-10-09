@@ -1,6 +1,6 @@
 $(function(){
-var x=0;
-var y=0;
+var x='';
+var y='';
 var type='';
 
 
@@ -10,6 +10,7 @@ $('.operators').on('click', getOperator);
 console.log(data);
 
    var data ={x: 0, y:0, type:'' };
+
   $('#equal').on('click', function(){
     console.log(data);
          $.ajax({
@@ -46,11 +47,13 @@ console.log(data);
               y += newButtonValue;
               data.y=y;
               console.log(y);
+              $('#result').text(y);
           } else {
               var buttonValue = $(this).attr('id');
               x += buttonValue;
               data.x=x;
               console.log(x);
+              $('#result').text(x);
           }
       }
 
@@ -60,11 +63,11 @@ console.log(data);
     }
 
       function clearNumbers(){
-        x=0;
-        y=0;
+        x='';
+        y='';
         type=''; //clearing type resulting to switch statement on server to default
             data.x=x;
-              data.y=y;
-              data.type=type;
+            data.y=y;
+            data.type=type;
       }
 });
