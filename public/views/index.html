@@ -9,44 +9,44 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 
-    <!-- <link rel="stylesheet" href="styles/style.css" /> -->
+    <link rel="stylesheet" href="styles/style.css" />
     <script src="vendor/jquery.min.js"></script>
     <script src="scripts/client.js"></script>
   </head>
   <body>
-    <h1 class="text-center" >Basic Calculator</h1>
+    <div class="container">
+
+    <h1 class="text-center jumbotron vertical-center" >Basic Calculator</h1>
 
     <div class ="row">
       <div class="col-md-4"></div>
       <div class="col-md-4">
         <table>
           <th class="panel panel-default">
-            <!-- <div class ="row">
-              <div class ="col-xs-4"></div>
-              <div class="col-xs-4"> -->
 
-
-              <!-- </div>
-            <div class ="col-xs-4"></div> -->
           </th>
-          <tr class="panel panel-default">
+          <tr class="panel panel-default text-right">
             <td>
-            <p class="panel-body" >TOTAL: <span class="text-center" id="result"></span></p>
+            <p class="panel-body" ><span class="text-right" id="result"></span>0</p>
           </td>
           </tr>
 
         <tr class="btn-group-justified">
           <td>
-            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="0"/>&nbsp;0&nbsp;</button>
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="7"/>7</button>
+
           </td>
           <td >
-            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="1"/>&nbsp;1&nbsp;</button>
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="8"/>8</button>
+
           </td>
           <td >
-            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="2"/>&nbsp;2&nbsp;</button>
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="9"/>9</button>
+
           </td>
           <td >
-            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="3"/>&nbsp;3&nbsp;</button>
+            <button type="button" class="operators btn btn-primary btn-lg btn-block" id="addition">+</button>
+
           </td>
         </tr>
         <tr class="btn-group-justified">
@@ -60,35 +60,41 @@
             <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="6"/>6</button>
           </td>
           <td>
-            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="7"/>7</button>
+            <button type="button" class="operators btn btn-primary btn-lg btn-block" id="subtraction">-</button>
+
           </td>
         </tr>
         <tr class="btn-group-justified">
           <td>
-            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="8"/>8</button>
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="1"/>&nbsp;1&nbsp;</button>
+
           </td>
           <td>
-            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="9"/>9</button>
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="2"/>&nbsp;2&nbsp;</button>
+
           </td>
           <td>
-            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="."/>.</button>
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="3"/>&nbsp;3&nbsp;</button>
+
           </td>
           <td>
-            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="equal"/>=</button></div>
+            <button type="button" class="operators btn btn-primary btn-lg btn-block" id="multiplication">x</button>
+
           </td>
         </tr>
         <tr class="btn-group-justified">
         <td>
-          <button type="button" class="operators btn btn-primary btn-lg btn-block" id="addition">+</button>
+          <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="0"/>&nbsp;0&nbsp;</button>
         </td>
           <td>
-            <button type="button" class="operators btn btn-primary btn-lg btn-block" id="division">/</button>
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="."/>.</button>
+
           </td>
          <td>
-          <button type="button" class="operators btn btn-primary btn-lg btn-block" id="multiplication">*</button>
+           <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="equal"/>=</button></div>
          </td>
             <td>
-              <button type="button" class="operators btn btn-primary btn-lg btn-block" id="subtraction">-</button>
+              <button type="button" class="operators btn btn-primary btn-lg btn-block" id="division">/</button>
             </td>
           </tr>
           <tr>
@@ -169,6 +175,7 @@
       <p>Result: </p> <span id="result"></span>
   </div>
 <div class ="col-xs-4"></div> -->
+      </div>
     </div>
   </body>
 </html>
