@@ -2,16 +2,24 @@ $(function(){
 var x='';
 var y='';
 var type='';
+var data ={x: 0, y:0, type:'' };
 
-
+//Button event listeners
 $('.numbers').on('click', getNumber);
 $('.operators').on('click', getOperator);
+$('.decimal').on('click', function(){
 
+  //when decimal button clicked once, disable it
+    $('.decimal').prop('disabled', true);
+
+});
+$('#equal').on('click', equalFunction);
+  $('#clear').on('click', clearButton);
 console.log(data);
 
-   var data ={x: 0, y:0, type:'' };
 
-  $('#equal').on('click', function(){
+
+function equalFunction (){
     console.log(data);
          $.ajax({
               type: 'POST',
@@ -19,15 +27,17 @@ console.log(data);
               data: data,
               success: function(result){
              $('#result').text(result);
+            //resets after displaying result
+             clearNumbers();
            }
 
 
            }); //End of post ajax
 
 
-      }); //End of click function
+      } //End of equalFunction
 
-      $('#clear').on('click', function(){
+    function clearButton (){
         clearNumbers();
         console.log(data);
              $.ajax({
@@ -35,14 +45,16 @@ console.log(data);
                   url: '/clear',
                   success: function(result){
                  $('#result').text(result);
+                 clearNumbers();
                }
 
 
              }); //End of post ajax
-      }); //end of click function
+      } //end of click function
 
       function getNumber(){
           if (data.type == 'addition' || data.type == 'division' ||data.type == 'multiplication' ||data.type == 'subtraction'){
+
               var newButtonValue = $(this).attr('id');
               y += newButtonValue;
               data.y=y;
@@ -54,12 +66,24 @@ console.log(data);
               data.x=x;
               console.log(x);
               $('#result').text(x);
+
           }
       }
 
       function getOperator(){
+       //enable decimal button back until clicked again
+        $('button').prop('disabled', false);
+
       type = $(this).attr('id');
       data.type=type;
+
+    //if operator buttons were clicked without x values set previous result as x
+        if(x==''){
+        x=$('#result').text();
+        data.x=x;
+        console.log(x);
+      }
+
     }
 
       function clearNumbers(){
