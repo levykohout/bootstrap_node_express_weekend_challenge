@@ -1,33 +1,174 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>Node Express and Bootstrap Weekend Challenge 3</title>
-    <link rel="stylesheet" href="styles/style.css" />
+
+    <!-- Latest compiled and minified CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+    <!-- <link rel="stylesheet" href="styles/style.css" /> -->
     <script src="vendor/jquery.min.js"></script>
     <script src="scripts/client.js"></script>
   </head>
   <body>
-    <h1>Basic Calculator</h1>
-    <button type="button" class="numbers" id="0"/>0</button>
-    <button type="button" class="numbers" id="1"/>1</button>
-    <button type="button" class="numbers" id="2"/>2</button>
-    <button type="button" class="numbers" id="3"/>3</button>
-    <button type="button" class="numbers" id="4"/>4</button>
-    <button type="button" class="numbers" id="5"/>5</button>
-    <button type="button" class="numbers" id="6"/>6</button>
-    <button type="button" class="numbers" id="7"/>7</button>
-    <button type="button" class="numbers" id="8"/>8</button>
-    <button type="button" class="numbers" id="9"/>9</button>
-      <button type="button" class="numbers" id="."/>.</button>
-    <button type="button" class="operators" id="addition">Add</button>
-    <button type="button" class="operators" id="division">Divide</button>
-    <button type="button" class="operators" id="multiplication">Multiply</button>
-    <button type="button" class="operators" id="subtraction">Subtract</button>
-    <button type="button" id="equal">=</button>
-    <button type="button" id="clear">Clear</button>
-    <div>
+    <h1 class="text-center" >Basic Calculator</h1>
+
+    <div class ="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <table>
+          <th class="panel panel-default">
+            <!-- <div class ="row">
+              <div class ="col-xs-4"></div>
+              <div class="col-xs-4"> -->
+
+
+              <!-- </div>
+            <div class ="col-xs-4"></div> -->
+          </th>
+          <tr class="panel panel-default">
+            <td>
+            <p class="panel-body" >TOTAL: <span class="text-center" id="result"></span></p>
+          </td>
+          </tr>
+
+        <tr class="btn-group-justified">
+          <td>
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="0"/>&nbsp;0&nbsp;</button>
+          </td>
+          <td >
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="1"/>&nbsp;1&nbsp;</button>
+          </td>
+          <td >
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="2"/>&nbsp;2&nbsp;</button>
+          </td>
+          <td >
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="3"/>&nbsp;3&nbsp;</button>
+          </td>
+        </tr>
+        <tr class="btn-group-justified">
+          <td>
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="4"/>4</button>
+          </td>
+          <td>
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="5"/>5</button>
+          </td>
+          <td>
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="6"/>6</button>
+          </td>
+          <td>
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="7"/>7</button>
+          </td>
+        </tr>
+        <tr class="btn-group-justified">
+          <td>
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="8"/>8</button>
+          </td>
+          <td>
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="9"/>9</button>
+          </td>
+          <td>
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="."/>.</button>
+          </td>
+          <td>
+            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="equal"/>=</button></div>
+          </td>
+        </tr>
+        <tr class="btn-group-justified">
+        <td>
+          <button type="button" class="operators btn btn-primary btn-lg btn-block" id="addition">+</button>
+        </td>
+          <td>
+            <button type="button" class="operators btn btn-primary btn-lg btn-block" id="division">/</button>
+          </td>
+         <td>
+          <button type="button" class="operators btn btn-primary btn-lg btn-block" id="multiplication">*</button>
+         </td>
+            <td>
+              <button type="button" class="operators btn btn-primary btn-lg btn-block" id="subtraction">-</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button type="button" class="btn btn-primary btn-lg btn-block" id="clear">Clear</button>
+            </td>
+
+          </tr>
+
+      </table>
+
+</div>
+
+
+<!--
+    <div class ="row">
+      <div class ="col-xs-4"></div>
+      <div class="col-xs-4 btn-group btn-group-lg" >
+      <button type="button" class="numbers btn btn-primary btn-lg" id="0"/>&nbsp;0&nbsp;</button>
+      <button type="button" class="numbers btn btn-primary btn-lg" id="1"/>&nbsp;1&nbsp;</button>
+      <button type="button" class="numbers btn btn-primary btn-lg" id="2"/>&nbsp;2&nbsp;</button>
+      <button type="button" class="numbers btn btn-primary btn-lg" id="3"/>&nbsp;3&nbsp;</button></div>
+      <div class="col-md-4"></div>
+      </div>
+
+    <div class ="row">
+      <div class ="col-xs-4"></div>
+      <div class="col-xs-4"  >
+        <button type="button" class="numbers btn btn-primary btn-lg" id="4"/>4</button>
+        <button type="button" class="numbers btn btn-primary btn-lg" id="5"/>5</button>
+        <button type="button" class="numbers btn btn-primary btn-lg" id="6"/>6</button>
+        <button type="button" class="numbers btn btn-primary btn-lg" id="7"/>7</button>
+      </div>
+      <div class ="col-xs-4"></div>
+    </div> -->
+
+  <!-- <div class ="row">
+    <div class ="col-xs-4"></div>
+    <div class="col-xs-4">
+      <button type="button" class="numbers btn btn-primary btn-lg" id="8"/>8</button>
+      <button type="button" class="numbers btn btn-primary btn-lg" id="9"/>9</button>
+      <button type="button" class="numbers btn btn-primary btn-lg" id="."/> . </button>
+      <button type="button" class="btn btn-primary btn-lg" id="equal">=</button>
+    </div>
+    <div class ="col-xs-4"></div>
+  </div> -->
+
+  <!-- <div class ="row">
+    <div class ="col-xs-4"></div>
+    <div class="col-xs-4">
+      <button type="button" class="operators btn btn-primary btn-lg" id="addition"> + </button>
+      <button type="button" class="operators btn btn-primary btn-lg" id="division"> / </button>
+      <button type="button" class="operators btn btn-primary btn-lg" id="multiplication"> * </button>
+      <button type="button" class="operators btn btn-primary btn-lg" id="subtraction"> - </button>
+    </div>
+    <div class ="col-xs-4"></div>
+  </div> -->
+
+<!-- <div class ="row">
+  <div class ="col-xs-4"></div>
+  <div class="col-xs-4">
+    <table>
+      <th>
+
+      </th>
+      <tr>
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="clear">Clear</button>
+      </tr>
+    </table>
+
+  </div> -->
+  <div class ="col-xs-4"></div>
+</div>
+
+<!-- <div class ="row">
+  <div class ="col-xs-4"></div>
+  <div class="col-xs-4">
       <p>Result: </p> <span id="result"></span>
+  </div>
+<div class ="col-xs-4"></div> -->
     </div>
   </body>
 </html>
