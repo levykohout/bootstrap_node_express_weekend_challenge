@@ -6,8 +6,7 @@
     <title>Node Express and Bootstrap Weekend Challenge 3</title>
 
     <!-- Latest compiled and minified CSS -->
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <link rel="stylesheet" href="styles/style.css" />
     <script src="vendor/jquery.min.js"></script>
@@ -16,83 +15,72 @@
   <body>
     <div class="container">
 
-    <h1 class="text-center vertical-center" >Rho-bot Calculator</h1>
+      <h1 class="text-center vertical-center" >Rho-bot Calculator</h1>
 
-    <div class ="row">
-      <div class="col-md-4"></div>
-      <div class="col-md-4 jumbotron">
-        <table>
-          <th class="panel panel-default">
+      <div class ="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 jumbotron">
+          <table>
+            <th class="panel panel-default">
+            </th>
+              <tr class="panel panel-default text-right">
+                <td>
+                  <p class="panel-body" ><span class="text-right" id="result"></span></p>
+                </td>
+              </tr>
 
-          </th>
-          <tr class="panel panel-default text-right">
+              <tr class="btn-group-justified">
+                <td>
+                  <button type="button" class="numbers btn btn-danger btn-lg btn-block" id="7"/>7</button>
+                </td>
+                <td >
+                  <button type="button" class="numbers btn btn-success btn-lg btn-block" id="8"/>8</button>
+                </td>
+                <td >
+                  <button type="button" class="numbers btn btn-danger btn-lg btn-block" id="9"/>9</button>
+                </td>
+                <td >
+                  <button type="button" class="operators btn btn-warning btn-lg btn-block" id="addition">+</button>
+                </td>
+            </tr>
+            <tr class="btn-group-justified">
+              <td>
+                <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="4"/>4</button>
+              </td>
+              <td>
+                <button type="button" class="numbers btn btn-warning btn-lg btn-block" id="5"/>5</button>
+              </td>
+              <td>
+                <button type="button" class="numbers btn btn-info btn-lg btn-block" id="6"/>6</button>
+              </td>
+              <td>
+                <button type="button" class="operators btn btn-success btn-lg btn-block" id="subtraction">-</button>
+              </td>
+           </tr>
+           <tr class="btn-group-justified">
+             <td>
+               <button type="button" class="numbers btn btn-success btn-lg btn-block" id="1"/>&nbsp;1&nbsp;</button>
+             </td>
+             <td>
+               <button type="button" class="numbers btn btn-danger btn-lg btn-block" id="2"/>&nbsp;2&nbsp;</button>
+             </td>
+             <td>
+               <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="3"/>&nbsp;3&nbsp;</button>
+             </td>
+             <td>
+               <button type="button" class="operators btn btn-info btn-lg btn-block" id="multiplication">x</button>
+             </td>
+         </tr>
+         <tr class="btn-group-justified">
             <td>
-            <p class="panel-body" ><span class="text-right" id="result"></span></p>
-          </td>
-          </tr>
-
-        <tr class="btn-group-justified">
-          <td>
-            <button type="button" class="numbers btn btn-danger btn-lg btn-block" id="7"/>7</button>
-
-          </td>
-          <td >
-            <button type="button" class="numbers btn btn-success btn-lg btn-block" id="8"/>8</button>
-
-          </td>
-          <td >
-            <button type="button" class="numbers btn btn-danger btn-lg btn-block" id="9"/>9</button>
-
-          </td>
-          <td >
-            <button type="button" class="operators btn btn-warning btn-lg btn-block" id="addition">+</button>
-
-          </td>
-        </tr>
-        <tr class="btn-group-justified">
-          <td>
-            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="4"/>4</button>
-          </td>
-          <td>
-            <button type="button" class="numbers btn btn-warning btn-lg btn-block" id="5"/>5</button>
-          </td>
-          <td>
-            <button type="button" class="numbers btn btn-info btn-lg btn-block" id="6"/>6</button>
-          </td>
-          <td>
-            <button type="button" class="operators btn btn-success btn-lg btn-block" id="subtraction">-</button>
-
-          </td>
-        </tr>
-        <tr class="btn-group-justified">
-          <td>
-            <button type="button" class="numbers btn btn-success btn-lg btn-block" id="1"/>&nbsp;1&nbsp;</button>
-
-          </td>
-          <td>
-            <button type="button" class="numbers btn btn-danger btn-lg btn-block" id="2"/>&nbsp;2&nbsp;</button>
-
-          </td>
-          <td>
-            <button type="button" class="numbers btn btn-primary btn-lg btn-block" id="3"/>&nbsp;3&nbsp;</button>
-
-          </td>
-          <td>
-            <button type="button" class="operators btn btn-info btn-lg btn-block" id="multiplication">x</button>
-
-          </td>
-        </tr>
-        <tr class="btn-group-justified">
-        <td>
-          <button type="button" class="numbers btn btn-warning btn-lg btn-block" id="0"/>&nbsp;0&nbsp;</button>
-        </td>
-          <td>
-            <button type="button" class="numbers btn btn-primary btn-lg btn-block decimal" id="."/>.</button>
-
-          </td>
-         <td>
-           <button type="button" class="btn btn-success btn-lg btn-block" id="equal"/>=</button></div>
-         </td>
+              <button type="button" class="numbers btn btn-warning btn-lg btn-block" id="0"/>&nbsp;0&nbsp;</button>
+            </td>
+            <td>
+              <button type="button" class="numbers btn btn-primary btn-lg btn-block decimal" id="."/>.</button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-success btn-lg btn-block" id="equal"/>=</button></div>
+            </td>
             <td>
               <button type="button" class="operators btn btn-warning btn-lg btn-block" id="division">/</button>
             </td>
@@ -101,81 +89,11 @@
             <td>
               <button type="button" class="btn btn-danger btn-lg btn-block" id="clear">Clear</button>
             </td>
-
           </tr>
-
-      </table>
-
-</div>
-
-
-<!--
-    <div class ="row">
-      <div class ="col-xs-4"></div>
-      <div class="col-xs-4 btn-group btn-group-lg" >
-      <button type="button" class="numbers btn btn-primary btn-lg" id="0"/>&nbsp;0&nbsp;</button>
-      <button type="button" class="numbers btn btn-primary btn-lg" id="1"/>&nbsp;1&nbsp;</button>
-      <button type="button" class="numbers btn btn-primary btn-lg" id="2"/>&nbsp;2&nbsp;</button>
-      <button type="button" class="numbers btn btn-primary btn-lg" id="3"/>&nbsp;3&nbsp;</button></div>
-      <div class="col-md-4"></div>
-      </div>
-
-    <div class ="row">
-      <div class ="col-xs-4"></div>
-      <div class="col-xs-4"  >
-        <button type="button" class="numbers btn btn-primary btn-lg" id="4"/>4</button>
-        <button type="button" class="numbers btn btn-primary btn-lg" id="5"/>5</button>
-        <button type="button" class="numbers btn btn-primary btn-lg" id="6"/>6</button>
-        <button type="button" class="numbers btn btn-primary btn-lg" id="7"/>7</button>
+        </table>
       </div>
       <div class ="col-xs-4"></div>
-    </div> -->
-
-  <!-- <div class ="row">
-    <div class ="col-xs-4"></div>
-    <div class="col-xs-4">
-      <button type="button" class="numbers btn btn-primary btn-lg" id="8"/>8</button>
-      <button type="button" class="numbers btn btn-primary btn-lg" id="9"/>9</button>
-      <button type="button" class="numbers btn btn-primary btn-lg" id="."/> . </button>
-      <button type="button" class="btn btn-primary btn-lg" id="equal">=</button>
-    </div>
-    <div class ="col-xs-4"></div>
-  </div> -->
-
-  <!-- <div class ="row">
-    <div class ="col-xs-4"></div>
-    <div class="col-xs-4">
-      <button type="button" class="operators btn btn-primary btn-lg" id="addition"> + </button>
-      <button type="button" class="operators btn btn-primary btn-lg" id="division"> / </button>
-      <button type="button" class="operators btn btn-primary btn-lg" id="multiplication"> * </button>
-      <button type="button" class="operators btn btn-primary btn-lg" id="subtraction"> - </button>
-    </div>
-    <div class ="col-xs-4"></div>
-  </div> -->
-
-<!-- <div class ="row">
-  <div class ="col-xs-4"></div>
-  <div class="col-xs-4">
-    <table>
-      <th>
-
-      </th>
-      <tr>
-        <button type="button" class="btn btn-primary btn-lg btn-block" id="clear">Clear</button>
-      </tr>
-    </table>
-
-  </div> -->
-  <div class ="col-xs-4"></div>
-</div>
-
-<!-- <div class ="row">
-  <div class ="col-xs-4"></div>
-  <div class="col-xs-4">
-      <p>Result: </p> <span id="result"></span>
-  </div>
-<div class ="col-xs-4"></div> -->
-      </div>
+     </div>
     </div>
   </body>
 </html>

@@ -29,60 +29,62 @@ function equalFunction (){
 
 
            }); //End of post ajax
-        }
+    }//End of condition
+} //End of equalFunction
 
-      } //End of equalFunction
+function clearButton (){
+    clearNumbers();
+    $('#result').text('0');
+} //end of clearButton function
 
-     function clearButton (){
-        clearNumbers();
-        $('#result').text('0');
-      } //end of clearButton function
+function getNumber(){
+    if (data.type == 'addition' || data.type == 'division' ||data.type == 'multiplication' ||data.type == 'subtraction'){
 
-      function getNumber(){
-          if (data.type == 'addition' || data.type == 'division' ||data.type == 'multiplication' ||data.type == 'subtraction'){
+        var newButtonValue = $(this).attr('id');
+        y += newButtonValue;
+        data.y=y;
+        console.log(y);
+        $('#result').text(y);
 
-              var newButtonValue = $(this).attr('id');
-              y += newButtonValue;
-              data.y=y;
-              console.log(y);
-              $('#result').text(y);
-          } else {
-              var buttonValue = $(this).attr('id');
-              x += buttonValue;
-              data.x=x;
-              console.log(x);
-              $('#result').text(x);
+    } else {
+        var buttonValue = $(this).attr('id');
+        x += buttonValue;
+        data.x=x;
+        console.log(x);
+        $('#result').text(x);
 
           }
-      }
+    }
 
-      function getOperator(){
+function getOperator(){
        //enable decimal button back until clicked again
-         $('button').prop('disabled', false);
+    $('button').prop('disabled', false);
 
-         type = $(this).attr('id');
-         data.type=type;
+    type = $(this).attr('id');
+    data.type=type;
 
     //if operator buttons were clicked without x values set previous result as x
-         if(x==''){
+    if(x==''){
          x=$('#result').text();
          data.x=x;
          console.log(x);
-        }
+    }
 
-      }
+  }
 
-      function clearNumbers(){
-         x='';
-         y='';
-         type=''; //clearing type resulting to switch statement on server to default
-         data.x=x;
-         data.y=y;
-         data.type=type;
-      }
+function clearNumbers(){
+  x='';
+  y='';
+  type='';
+  //clearing type resulting to switch statement on server to default
+   data.x=x;
+   data.y=y;
+   data.type=type;
+  }
 
-      function decimalClicked() {
-        //when decimal button clicked once, disable it
-          $('.decimal').prop('disabled', true);
-        }
+function decimalClicked() {
+  //when decimal button clicked once, disable it
+  $('.decimal').prop('disabled', true);
+  }
+
 });
