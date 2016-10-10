@@ -7,50 +7,36 @@ var data ={x: 0, y:0, type:'' };
 //Button event listeners
 $('.numbers').on('click', getNumber);
 $('.operators').on('click', getOperator);
-$('.decimal').on('click', function(){
-
-  //when decimal button clicked once, disable it
-    $('.decimal').prop('disabled', true);
-
-});
+$('.decimal').on('click', decimalClicked);
 $('#equal').on('click', equalFunction);
-  $('#clear').on('click', clearButton);
+$('#clear').on('click', clearButton);
 console.log(data);
 
 
 
 function equalFunction (){
+  if (data.type != '') { // no post request if no operator selected
     console.log(data);
          $.ajax({
               type: 'POST',
               url: '/' + data.type,
               data: data,
               success: function(result){
-             $('#result').text(result);
+              $('#result').text(result);
             //resets after displaying result
-             clearNumbers();
+              clearNumbers();
            }
 
 
            }); //End of post ajax
-
+        }
 
       } //End of equalFunction
 
-    function clearButton (){
+     function clearButton (){
         clearNumbers();
-        console.log(data);
-             $.ajax({
-                  type: 'POST',
-                  url: '/clear',
-                  success: function(result){
-                 $('#result').text(result);
-                 clearNumbers();
-               }
-
-
-             }); //End of post ajax
-      } //end of click function
+        $('#result').text('0');
+      } //end of clearButton function
 
       function getNumber(){
           if (data.type == 'addition' || data.type == 'division' ||data.type == 'multiplication' ||data.type == 'subtraction'){
@@ -72,26 +58,31 @@ function equalFunction (){
 
       function getOperator(){
        //enable decimal button back until clicked again
-        $('button').prop('disabled', false);
+         $('button').prop('disabled', false);
 
-      type = $(this).attr('id');
-      data.type=type;
+         type = $(this).attr('id');
+         data.type=type;
 
     //if operator buttons were clicked without x values set previous result as x
-        if(x==''){
-        x=$('#result').text();
-        data.x=x;
-        console.log(x);
-      }
+         if(x==''){
+         x=$('#result').text();
+         data.x=x;
+         console.log(x);
+        }
 
-    }
+      }
 
       function clearNumbers(){
-        x='';
-        y='';
-        type=''; //clearing type resulting to switch statement on server to default
-            data.x=x;
-            data.y=y;
-            data.type=type;
+         x='';
+         y='';
+         type=''; //clearing type resulting to switch statement on server to default
+         data.x=x;
+         data.y=y;
+         data.type=type;
       }
+
+      function decimalClicked() {
+        //when decimal button clicked once, disable it
+          $('.decimal').prop('disabled', true);
+        }
 });
