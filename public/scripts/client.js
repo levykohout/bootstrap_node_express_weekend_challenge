@@ -19,7 +19,7 @@ function equalFunction (){
     console.log(data);
          $.ajax({
               type: 'POST',
-              url: '/' + data.type,
+              url: '/math/' + data.type,
               data: data,
               success: function(result){
               $('#result').text(result);

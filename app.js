@@ -2,10 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var path = require('path');
-var additionRouter = require('./routes/addition');
-var divisionRouter = require('./routes/division');
-var multiplicationRouter = require('./routes/multiplication');
-var subtractionRouter = require('./routes/subtraction');
+var mathRouter = require('./routes/math');
 
 
 var app = express();
@@ -13,10 +10,7 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use('/addition', additionRouter);
-app.use('/division', divisionRouter);
-app.use('/multiplication', multiplicationRouter);
-app.use('/subtraction', subtractionRouter);
+app.use('/math', mathRouter);
 
 app.get('/', function(req, res){
   console.log('Received a request at', new Date());
